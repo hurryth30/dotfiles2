@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# base
+export PATH="/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
+# # pyenv
+# # export PYTHONPATH=""
+# if [ -d ~/.pyenv ]; then
+# 	export PYENV_ROOT="${HOME}/.pyenv"
+# 	export PYENV="${PYENV_ROOT}/shims"
+# 	export PATH="${PYENV_ROOT}:${PYENV}:${PATH}"
+# fi
+
+# # npm
+# if [ -s /usr/bin/node ]; then
+#     export PATH="./node_modules/.bin:${PATH}"
+# fi
+
+
+# if [ -d ~/.nvm ]; then
+#     export NVM_DIR="$HOME/.nvm"
+#     export PATH="${NVM_DIR}:${PATH}"
+#     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+# fi
+
+# # rust
+# if [ -d ~/.cargo ]; then
+# 	export PATH="${HOME}/.cargo/bin:${PATH}"

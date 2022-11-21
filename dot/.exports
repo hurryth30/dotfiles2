@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# デフォルトのエディター
+export EDITOR="$(which vim)"
+export VISUAL="$(which vim)"
+
+# 256色表示
+export TERM=xterm-256color
+
+# bat
+export BAT_THEME="GitHub"
+
+# tmux
+export TMUX_TMPDIR=~/.tmux/tmp
+
+# display (wsl)
+# export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0 */

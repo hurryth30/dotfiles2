@@ -1,0 +1,70 @@
+#!/bin/sh
+
+# source
+alias reload='exec $SHELL -l'
+alias sb='source ~/.bashrc'
+alias sz='source ~/.zshrc'
+alias sv='source ~/.vimrc'
+alias st='tmux source-file ~/.tmux.conf'
+
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# ls
+alias la='ls -A'
+alias ll='ls -alhF'
+
+# vim
+alias vi='vim'
+alias vb='vim ~/.bashrc'
+alias vt='vi ~/.tmux.conf'
+alias vv='vi ~/.vimrc'
+alias vz='vi ~/.zshrc'
+alias valias='vim ${HOME}/.aliases'
+alias venv='vim ${HOME}/.env'
+alias vexport='vim ${HOME}/.exports'
+alias vfunc='vim ${HOME}/.functions'
+alias vgit='vi ${HOME}/.gitconfig'
+alias vpath='vim ${HOME}/.path'
+
+# cd
+alias ..='cd ..'
+alias cdpy='cd ~/lessons/python_lessons'
+alias dot='cd ~/dotfiles'
+
+# windows(wsl)
+if [ ! -d /mnt ]; then
+    alias win='cd /mnt/c/Users/$(whoami)'
+    alias video='cd /mnt/c/Users/$(whoami)/Downloads/videos'
+fi
+
+# ssh
+alias sshkey='ssh-keygen -t rsa -b 4096 -C "" -N ""'
+
+# python
+alias python='python3'
+
+# yt_dlp
+# when [Errno 36] File name too long
+# yt-dlp -o "/Output/%(id)s.%(ext)s" url
+if iscommand yt-dlp; then
+	alias ydl="yt-dlp --write-auto-sub -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best' --cookies ~/.youtube-cookie -o './%(channel).220s/%(playlist_title).200s/%(title).230s.%(ext)s'"
+fi
+
+# ncdu
+if iscommand ncdu; then
+	alias size='ncdu'
+fi
+
+# cat
+if iscommand batcat; then
+	alias cat='bat --style="grid"'
+fi

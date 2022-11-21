@@ -1,0 +1,25 @@
+[user]
+    name=hurryth30
+    email=hurryth30@gmail.com
+
+[url "github:"]
+    pushInsteadOf = https://github.com/
+    pushInsteadOf = git@github.com:
+
+[alias]
+    st = status
+    co = commit
+    br = branch
+    ck = checkout
+
+[push]
+    default = current
+
+[fitch]
+    prune = true
+
+[core]
+    editor = vim -c \"set fenc=utf-8\"
+
+[credential]
+    helper = store
