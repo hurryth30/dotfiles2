@@ -11,13 +11,13 @@ sudo apt autoclean
 sudo timedatectl set-timezone Asia/Tokyo
 
 # common package
-./install_common_package.sh
+./common/install_common_package.sh
 
 # zsh
-./setup_zsh.sh
+./common/setup_zsh.sh
 
 # link dotfiles
-./link_dotfiles.sh
+./dot/link_dotfiles.sh
 
 # git
-./setup_git.sh
+./common/setup_git.sh
