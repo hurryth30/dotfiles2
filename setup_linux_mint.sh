@@ -11,4 +11,7 @@ ln -nfs ${HOME}/dotfiles/linux_mint/.env ${HOME}/.env
 cp ${HOME}/dotfiles/linux_mint/redshift.conf ${HOME}/.config/redshift.conf
 
 # browser
-./etc/setup_brave_browser.sh
+./etc/install_brave_browser.sh
+
+# code
+./etc/install_code.sh

@@ -1,5 +1,14 @@
 #!/bin/sh
 
+# change dirname
+if [ $(basename ${PWD}) != dotfiles ]; then
+    mv ${PWD} $HOME/dotfiles
+    echo 'changed current dirname to dotfiles.'
+fi
+
+# chmod
+chmod -R 764 $HOME/dotfiles
+
 # system update
 sudo apt -y update
 sudo apt -y upgrade

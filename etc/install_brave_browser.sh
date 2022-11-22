@@ -1,7 +1,5 @@
 #!/bin/sh
 
-echo 'ahooooo'
-
 if type brave-browser >/dev/null 2>&1; then
 	echo 'already installed brave-browser'
 else
@@ -10,5 +8,5 @@ else
     echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
     sudo apt update
     sudo apt install -y brave-browser
-    echo 'installed brave-browser'
+    echo 'installed brave-browser.'
 fi
