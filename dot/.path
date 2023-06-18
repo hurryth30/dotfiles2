@@ -3,13 +3,14 @@
 # base
 export PATH="/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
-# # pyenv
-# # export PYTHONPATH=""
-# if [ -d ~/.pyenv ]; then
-# 	export PYENV_ROOT="${HOME}/.pyenv"
-# 	export PYENV="${PYENV_ROOT}/shims"
-# 	export PATH="${PYENV_ROOT}:${PYENV}:${PATH}"
-# fi
+# pyenv
+# export PYTHONPATH=""
+if [ -d ~/.pyenv ]; then
+	export PYENV_ROOT="${HOME}/.pyenv/bin"
+	export PYENV="${PYENV_ROOT}/shims"
+	export PATH="${PYENV_ROOT}:${PYENV}:${PATH}"
+    eval "$(pyenv init -)"
+fi
 
 # # npm
 # if [ -s /usr/bin/node ]; then
