@@ -8,17 +8,22 @@ fi
 chmod -R 764 $HOME/dotfiles
 
 # system update
-sudo apt -y update
-sudo apt -y upgrade
-sudo apt  dist-upgrade
-sudo apt  autoremove
-sudo apt autoclean
-
-# timezome
-sudo timedatectl set-timezone Asia/Tokyo
-
-# common package
-./common/install_common_package.sh
+now=`date '+%Y-%m-%d'`
+updated_time=`cat updated_time.txt`
+if [ $updated_time != $now ]; then
+    # update system
+    sudo apt -y update
+    sudo apt -y upgrade
+    sudo apt  dist-upgrade
+    sudo apt  autoremove
+    sudo apt autoclean
+    # timezome
+    sudo timedatectl set-timezone Asia/Tokyo
+    # common package
+    ./common/install_common_package.sh
+    # updateした時刻を出力
+    echo $now > updated_time.txt
+fi
 
 # zsh
 ./common/setup_zsh.sh
@@ -40,4 +45,11 @@ if [ ! -d $HOME/.pyenv ]; then
     $HOME/.pyenv/bin/pyenv install 3.11.4
     echo "change to default python version"
     $HOME/.pyenv/bin/pyenv global 3.11.4
+fi
+
+# yt-dlp
+if [ -d $HOME/.pyenv ] && [ ! -e $PYENV/yt-dlp ]; then
+    # yt-dlpをインストール
+    ehoc "install yt-dlp"
+    pip install yt-dlp
 fi

@@ -41,7 +41,7 @@ alias cdpy='cd ~/lessons/python_lessons'
 alias dot='cd ~/dotfiles'
 
 # windows(wsl)
-if [ ! -d /mnt ]; then
+if [ -d /mnt ]; then
     alias win='cd /mnt/c/Users/$(whoami)'
     alias video='cd /mnt/c/Users/$(whoami)/Downloads/videos'
 fi

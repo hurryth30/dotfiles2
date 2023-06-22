@@ -16,8 +16,7 @@ if [ ! -f $HOME/.ssh/${ID_RSA_GITHUB_NAME} ]; then
     echo "https://github.com/settings/keys"
     echo "test ssh"
     echo "ssh -T github"
-
-else
-    echo "already created ssh of github."
+# else
+    # echo "already created ssh of github."
 fi
 
