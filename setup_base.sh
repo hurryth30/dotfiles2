@@ -50,6 +50,9 @@ fi
 # yt-dlp
 if [ -d $HOME/.pyenv ] && [ ! -e $PYENV/yt-dlp ]; then
     # yt-dlpをインストール
-    ehoc "install yt-dlp"
+    echo "install yt-dlp"
     pip install yt-dlp
+    ehoc "install yt-dlp"
+    echo "install to require multiple build libraries on yt-dlp."
+    sudo apt install ffmpeg
 fi
