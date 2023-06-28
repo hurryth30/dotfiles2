@@ -11,12 +11,26 @@ https://github.com/settings/keys
 ```
 
 テスト実行
+```
 $ ssh -T git@github.com
+```
 
 詳細
+```
 https://docs.github.com/en/authentication/connecting-to-github-with-ssh/testing-your-ssh-connection
+```
 
 clone実行
+```
 git clone git@github.com:hurryth30/dotfiles2.git
+```
 
 →"https"用じゃなく"SSH通信用"のurlを使う
+
+
+# ThinkPad
+
+## 解像度が細かすぎて文字が小さい
+
+- 設定 → ディスプレイ → スケール0.9 (微調整)
+- 外観 → デフォルトフォント16
