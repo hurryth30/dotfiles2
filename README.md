@@ -1,13 +1,14 @@
 # git clone失敗したとき
 
 公開鍵登録した？
-
 ```
 cat ~/.ssh/github.pub
 ```
 
 登録場所
+```
 https://github.com/settings/keys
+```
 
 テスト実行
 $ ssh -T git@github.com
